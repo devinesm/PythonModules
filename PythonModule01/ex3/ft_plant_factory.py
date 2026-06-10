@@ -1,29 +1,39 @@
 #!/usr/bin/env python3
+# *************************************************************************** #
+#                                                                             #
+#                                                         :::      ::::::::   #
+#   ft_plant_factory.py                                 :+:      :+:    :+:   #
+#                                                     +:+ +:+         +:+     #
+#   By: ipinto-m <ipinto-m@student.42porto.com>     +#+  +:+       +#+        #
+#                                                 +#+#+#+#+#+   +#+           #
+#   Created: 2026/06/10 16:52:20 by ipinto-m           #+#    #+#             #
+#   Updated: 2026/06/10 17:19:41 by ipinto-m          ###   ########.fr       #
+#                                                                             #
+# *************************************************************************** #
 
 class Plant:
     def __init__(self, name: str, height: float, age: int) -> None:
-        self.name = name
+        self.name = name.capitalize()
         self.height = height
-        self.plant_age = age
+        self.age = age
 
     def show(self) -> None:
-        name = self.name.capitalize()
-        print(f"{name}: {self.height:.1f}cm, {self.plant_age} days old")
+        print(f"{self.name}: {self.height:.1f}cm, {self.age} days old")
 
-    def grow(self) -> None:
-        self.height += 0.8
+    def grow(self, growth_value: float) -> None:
+        self.height += growth_value
 
-    def age(self) -> None:
-        self.plant_age += 1
+    def age_up(self, age_value: int) -> None:
+        self.age += age_value
 
 
-def main():
+def main() -> None:
     plants = [
-        Plant("rose", 25, 30),
-        Plant("oak", 200, 365),
-        Plant("cactus", 5, 90),
-        Plant("sunflower", 80, 45),
-        Plant("fern", 15, 120),
+        Plant("rose", 25.0, 30),
+        Plant("oak", 200.0, 365),
+        Plant("cactus", 5.0, 90),
+        Plant("sunflower", 80.0, 45),
+        Plant("fern", 15.0, 120),
     ]
 
     print("=== Plant Factory Output ===")

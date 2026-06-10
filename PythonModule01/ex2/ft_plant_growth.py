@@ -1,24 +1,34 @@
 #!/usr/bin/env python3
+# *************************************************************************** #
+#                                                                             #
+#                                                         :::      ::::::::   #
+#   ft_plant_growth.py                                  :+:      :+:    :+:   #
+#                                                     +:+ +:+         +:+     #
+#   By: ipinto-m <ipinto-m@student.42porto.com>     +#+  +:+       +#+        #
+#                                                 +#+#+#+#+#+   +#+           #
+#   Created: 2026/06/10 16:52:14 by ipinto-m           #+#    #+#             #
+#   Updated: 2026/06/10 17:14:49 by ipinto-m          ###   ########.fr       #
+#                                                                             #
+# *************************************************************************** #
 
 class Plant:
     def __init__(self, name: str, height: float, age: int) -> None:
-        self.name = name
+        self.name = name.capitalize()
         self.height = height
-        self.plant_age = age
+        self.age = age
 
     def show(self) -> None:
-        name = self.name.capitalize()
-        print(f"{name}: {self.height:.1f}cm, {self.plant_age} days old")
+        print(f"{self.name}: {self.height:.1f}cm, {self.age} days old")
 
-    def grow(self) -> None:
-        self.height += 0.8
+    def grow(self, growth_value: float) -> None:
+        self.height += growth_value
 
-    def age(self) -> None:
-        self.plant_age += 1
+    def age_up(self, age_value: int) -> None:
+        self.age += age_value
 
 
-def main():
-    rose = Plant("Rose", 25, 30)
+def main() -> None:
+    rose = Plant("rose", 25.0, 30)
     print("=== Garden Plant Growth ===")
     rose.show()
 
@@ -26,8 +36,8 @@ def main():
 
     for i in range(1, 8):
         print(f"=== Day {i} ===")
-        rose.grow()
-        rose.age()
+        rose.grow(0.8)
+        rose.age_up(1)
         rose.show()
 
     growth = rose.height - initial_height
