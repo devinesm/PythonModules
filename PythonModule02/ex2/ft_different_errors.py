@@ -1,4 +1,16 @@
 #!/usr/bin/env python3
+# *************************************************************************** #
+#                                                                             #
+#                                                         :::      ::::::::   #
+#   ft_different_errors.py                              :+:      :+:    :+:   #
+#                                                     +:+ +:+         +:+     #
+#   By: ipinto-m <ipinto-m@student.42porto.com>     +#+  +:+       +#+        #
+#                                                 +#+#+#+#+#+   +#+           #
+#   Created: 2026/06/18 14:39:09 by ipinto-m           #+#    #+#             #
+#   Updated: 2026/06/18 14:39:11 by ipinto-m          ###   ########.fr       #
+#                                                                             #
+# *************************************************************************** #
+
 
 def garden_operations(operation_number: int) -> None:
     if operation_number == 0:

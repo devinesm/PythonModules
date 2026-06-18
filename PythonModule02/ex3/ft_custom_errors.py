@@ -1,4 +1,16 @@
 #!/usr/bin/env python3
+# *************************************************************************** #
+#                                                                             #
+#                                                         :::      ::::::::   #
+#   ft_custom_errors.py                                 :+:      :+:    :+:   #
+#                                                     +:+ +:+         +:+     #
+#   By: ipinto-m <ipinto-m@student.42porto.com>     +#+  +:+       +#+        #
+#                                                 +#+#+#+#+#+   +#+           #
+#   Created: 2026/06/18 14:39:21 by ipinto-m           #+#    #+#             #
+#   Updated: 2026/06/18 14:39:22 by ipinto-m          ###   ########.fr       #
+#                                                                             #
+# *************************************************************************** #
+
 
 class GardenError(Exception):
     def __init__(self, message: str = "Unknown garden error") -> None:

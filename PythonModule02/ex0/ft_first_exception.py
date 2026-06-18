@@ -7,9 +7,10 @@
 #   By: ipinto-m <ipinto-m@student.42porto.com>     +#+  +:+       +#+        #
 #                                                 +#+#+#+#+#+   +#+           #
 #   Created: 2026/06/10 20:20:57 by ipinto-m           #+#    #+#             #
-#   Updated: 2026/06/10 20:39:04 by ipinto-m          ###   ########.fr       #
+#   Updated: 2026/06/18 14:39:17 by ipinto-m          ###   ########.fr       #
 #                                                                             #
 # *************************************************************************** #
+
 
 def input_temperature(temp_str: str) -> int:
     return int(temp_str)
