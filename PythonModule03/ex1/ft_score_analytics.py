@@ -35,7 +35,7 @@ def main(args: list[str]) -> None:
         print(f"Scores processed: {scores}")
         print(f"Total players: {len(scores)}")
         print(f"Total score: {sum(scores)}")
-        print(f"Average score: {sum(scores) / len(scores):.2f}")
+        print(f"Average score: {sum(scores) / len(scores):.1f}")
         print(f"High score: {max(scores)}")
         print(f"Low score: {min(scores)}")
         print(f"Score range: {max(scores) - min(scores)}")

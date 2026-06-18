@@ -15,7 +15,7 @@ import math
 
 
 def parse_args(coordinates: list[str]) -> list[float]:
-    coords : list[float] = []
+    coords: list[float] = []
 
     if (len(coordinates) != 3):
         raise Exception("Invalid syntax")
@@ -24,17 +24,19 @@ def parse_args(coordinates: list[str]) -> list[float]:
     while (i < len(coordinates)):
         try:
             coords.append(float(coordinates[i]))
-        except Exception:
-            raise Exception("Invalid syntax")
+        except ValueError as e:
+            raise Exception("Error on parameter"
+                            f"{coordinates[i].strip()}: {e}")
         i += 1
 
     return (coords)
 
 
-def get_player_pos() -> tuple[float, float, float] :    
+def get_player_pos() -> tuple:
     valid = False
-    while (valid == False):
-        user_input = input("Enter new coordinates as floats in format 'x, y, z': ")
+    while (valid is False):
+        user_input = input("Enter new coordinates "
+                           "as floats in format 'x, y, z': ")
         coordinates: list[str] = user_input.split(",")
 
         try:
@@ -43,8 +45,8 @@ def get_player_pos() -> tuple[float, float, float] :
         except Exception as e:
             print(f"{e}")
 
-    return (coords[0], coords[1], coords[2])
-    
+    return tuple(coords)
+
 
 def display_tuple(coords: tuple[float, float, float]) -> None:
     print(f"Got a first tuple: {coords}")
@@ -55,8 +57,15 @@ def display_coords(coords: tuple[float, float, float]) -> None:
     print(f"X={coords[0]}, Y={coords[1]}, Z={coords[2]}")
 
 
-# def calculate_distance(coords: tuple[float, float, float], coords2: tuple[float, float, float]) -> float:
-#     return (math.sqrt((x2-x1)**2 + (y2-y1)**2 + (z2-z1)**2))
+def calculate_distance(coords: tuple[float, float, float],
+                       coords2: tuple[float, float, float]) -> float:
+    x1 = coords[0]
+    x2 = coords2[0]
+    y1 = coords[1]
+    y2 = coords2[1]
+    z1 = coords[2]
+    z2 = coords2[2]
+    return (math.sqrt((x2-x1)**2 + (y2-y1)**2 + (z2-z1)**2))
 
 
 def main() -> None:
@@ -64,14 +73,17 @@ def main() -> None:
     first_coords = get_player_pos()
     display_tuple(first_coords)
     display_coords(first_coords)
-    
-    # distance_to_center = calculate_distance(first_coords, (0,0,0))
-    # print(f"Distance to center: {distance_to_center}")
+
+    distance_to_center = calculate_distance(first_coords, (0, 0, 0))
+    print(f"Distance to center: {distance_to_center:.4f}")
+
+    print()
 
     print("Get a second set of coordinates")
     second_coords = get_player_pos()
-    # distance_coords = calculate_distance(first_coords, second_coords)
-    # print(f"Distance between the 2 sets of coordinates: {distance_coords}")
+    distance_coords = calculate_distance(first_coords, second_coords)
+    print(f"Distance between the 2 sets of coordinates: {distance_coords:.4f}")
+
 
 if __name__ == "__main__":
     main()
