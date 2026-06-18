@@ -28,12 +28,12 @@ def custom_error_garden(plant: str, water: int) -> None:
     try:
         custom_error_plant(plant)
     except GardenError as garden_error:
-        print(f"Caught {type(garden_error).__name__}: {garden_error}")
+        print(f"Caught {garden_error.__class__.__name__}: {garden_error}")
 
     try:
         custom_error_water(water)
     except GardenError as garden_error:
-        print(f"Caught {type(garden_error).__name__}: {garden_error}")
+        print(f"Caught {garden_error.__class__.__name__}: {garden_error}")
 
 
 def ft_custom_errors() -> None:
@@ -44,7 +44,7 @@ def ft_custom_errors() -> None:
     try:
         custom_error_plant("tomato")
     except PlantError as plant_error:
-        print(f"Caught {type(plant_error).__name__}: {plant_error}")
+        print(f"Caught {plant_error.__class__.__name__}: {plant_error}")
 
     print()
 
@@ -52,7 +52,7 @@ def ft_custom_errors() -> None:
     try:
         custom_error_water(3)
     except WaterError as water_error:
-        print(f"Caught {type(water_error).__name__}: {water_error}")
+        print(f"Caught {water_error.__class__.__name__}: {water_error}")
 
     print()
 

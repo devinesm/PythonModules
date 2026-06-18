@@ -25,7 +25,7 @@ def test_error_types() -> None:
             FileNotFoundError,
             TypeError,
         ) as error:
-            print(f"Caught {type(error).__name__}: {error}")
+            print(f"Caught {error.__class__.__name__}: {error}")
 
     print()
     print("All error types tested successfully!")
