@@ -7,7 +7,7 @@
 #   By: ipinto-m <ipinto-m@student.42porto.com>     +#+  +:+       +#+        #
 #                                                 +#+#+#+#+#+   +#+           #
 #   Created: 2026/06/19 10:46:27 by ipinto-m           #+#    #+#             #
-#   Updated: 2026/06/19 10:46:30 by ipinto-m          ###   ########.fr       #
+#   Updated: 2026/06/19 12:58:46 by ipinto-m          ###   ########.fr       #
 #                                                                             #
 # *************************************************************************** #
 
@@ -42,7 +42,7 @@ def main() -> None:
     print()
 
     achievements_set = set(achievements)
-    print(f"All distinct achievements: {achievements_set}")
+    print(f"All distinct achievements: {alice.union(bob, charlie, dylan)}")
 
     print()
     print(f"Common achievements: {alice.intersection(bob, charlie, dylan)}")

@@ -7,7 +7,7 @@
 #   By: ipinto-m <ipinto-m@student.42porto.com>     +#+  +:+       +#+        #
 #                                                 +#+#+#+#+#+   +#+           #
 #   Created: 2026/06/19 11:50:18 by ipinto-m           #+#    #+#             #
-#   Updated: 2026/06/19 12:51:41 by ipinto-m          ###   ########.fr       #
+#   Updated: 2026/06/19 13:19:01 by ipinto-m          ###   ########.fr       #
 #                                                                             #
 # *************************************************************************** #
 
@@ -22,33 +22,27 @@ def main() -> None:
                "dylan", "Emma", "Gregory",
                "john", "kevin", "Liam"]
 
-    players_capitalized = []
-    players_all_capitalized = []
+    players_all_capitalized = [player.capitalize() for player in players]
 
-    for player in players:
-        if (player == player.capitalize()):
-            players_capitalized.append(player)
-            players_all_capitalized.append(player)
-        else:
-            players_all_capitalized.append(player.capitalize())
+    players_capitalized = [player for player in players
+                           if player == player.capitalize()]
 
-    print()
     print(f"Initial list of players: {players}")
-    print(f"New list with all capitalized: {players_all_capitalized}")
+    print(f"New list with all names capitalized: {players_all_capitalized}")
     print(f"New list of capitalized names only: {players_capitalized}")
-    print()
 
-    scores: dict = {}
-    for player in players_all_capitalized:
-        scores.update({player: random.randrange(150, 1000)})
+    scores = {player: random.randint(0, 1000)
+              for player in players_all_capitalized}
 
     print(f"Score dict: {scores}")
-    print(f"Score average is {sum(scores.values()) / len(scores):.2f}")
 
-    more_average_score: dict = {}
-    for key, value in scores.items():
-        if (value > sum(scores.values()) / len(scores)):
-            more_average_score[key] = value
+    average = round(sum(scores[p] for p in scores) / len(scores), 2)
+
+    print(f"Score average is {average:.2f}")
+
+    more_average_score = {player: scores[player]
+                          for player in scores if scores[player] > average}
+
     print(f"High scores: {more_average_score}")
 
 
