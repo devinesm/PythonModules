@@ -7,7 +7,7 @@
 #   By: ipinto-m <ipinto-m@student.42porto.com>     +#+  +:+       +#+        #
 #                                                 +#+#+#+#+#+   +#+           #
 #   Created: 2026/06/19 13:34:36 by ipinto-m           #+#    #+#             #
-#   Updated: 2026/06/19 17:39:30 by ipinto-m          ###   ########.fr       #
+#   Updated: 2026/06/22 19:23:47 by ipinto-m          ###   ########.fr       #
 #                                                                             #
 # *************************************************************************** #
 
@@ -135,7 +135,7 @@ def main() -> None:
           f"{num_processor.validate('Hello')}")
     print("Test invalid ingestion of string 'foo' without prior validation:")
     try:
-        num_processor.ingest("foo")
+        num_processor.ingest("foo")  # type: ignore
     except Exception as e:
         print(e)
 

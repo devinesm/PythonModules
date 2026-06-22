@@ -7,7 +7,7 @@
 #   By: ipinto-m <ipinto-m@student.42porto.com>     +#+  +:+       +#+        #
 #                                                 +#+#+#+#+#+   +#+           #
 #   Created: 2026/06/19 13:34:36 by ipinto-m           #+#    #+#             #
-#   Updated: 2026/06/22 18:40:13 by ipinto-m          ###   ########.fr       #
+#   Updated: 2026/06/22 19:18:39 by ipinto-m          ###   ########.fr       #
 #                                                                             #
 # *************************************************************************** #
 
@@ -162,7 +162,7 @@ class DataStream():
             left = len(p._queue)
             print(f"{name} Processor: total {total_processed} "
                   f"items processed, remaining {left} on processor")
-            
+
     def output_pipeline(self, nb: int, plugin: ExportPlugin) -> None:
         for p in self._processors:
             transport = []
@@ -219,14 +219,15 @@ def main() -> None:
     stream.register_processor(log_proc)
 
     batch1 = [
-        'Hello world', 
-        [3.14, -1, 2.71], 
-        [{'log_level': 'WARNING', 'log_message': 'Telnet access! Use ssh instead'}, 
-         {'log_level': 'INFO', 'log_message': 'User wil is connected'}], 
-        42, 
+        'Hello world',
+        [3.14, -1, 2.71],
+        [{'log_level': 'WARNING',
+          'log_message': 'Telnet access! Use ssh instead'},
+         {'log_level': 'INFO', 'log_message': 'User wil is connected'}],
+        42,
         ['Hi', 'five']
     ]
-    
+
     print(f"Send first batch of data on stream: {batch1}")
     stream.process_stream(batch1)
     print()
@@ -239,14 +240,15 @@ def main() -> None:
     stream.print_processors_stats()
     print()
     batch2 = [
-        21, 
-        ['I love AI', 'LLMs are wonderful', 'Stay healthy'], 
-        [{'log_level': 'ERROR', 'log_message': '500 server crash'}, 
-         {'log_level': 'NOTICE', 'log_message': 'Certificate expires in 10 days'}], 
-        [32, 42, 64, 84, 128, 168], 
+        21,
+        ['I love AI', 'LLMs are wonderful', 'Stay healthy'],
+        [{'log_level': 'ERROR', 'log_message': '500 server crash'},
+         {'log_level': 'NOTICE',
+          'log_message': 'Certificate expires in 10 days'}],
+        [32, 42, 64, 84, 128, 168],
         'World hello'
     ]
-    
+
     print(f"Send another batch of data:\n{batch2}")
     stream.process_stream(batch2)
     print()
