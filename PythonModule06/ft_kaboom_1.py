@@ -6,9 +6,9 @@ def main() -> None:
     print("Access to alchemy/grimoire/dark_spellbook.py directly")
     print("Test import now - THIS WILL RAISE AN UNCAUGHT EXCEPTION")
     try:
-        from alchemy.grimoire.dark_spellbook import dark_spell_record
+        import alchemy.grimoire.dark_spellbook as da
         print("Testing record dark spell:"
-              f" {dark_spell_record('Curse', 'bats, frogs')}")
+              f" {da.dark_spell_record('Curse', 'bats, frogs')}")
     except ImportError as e:
         print(e)
 
