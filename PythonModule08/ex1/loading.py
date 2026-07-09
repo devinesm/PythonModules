@@ -6,8 +6,8 @@ import importlib
 
 def analyse_matrix() -> None:
     import numpy as np
-    import pandas as pd
-    import matplotlib.pyplot as plt
+    import pandas as pd  # type: ignore
+    import matplotlib.pyplot as plt  # type: ignore
 
     print("Analyzing Matrix data...")
     print()
