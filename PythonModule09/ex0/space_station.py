@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-from pydantic import BaseModel, Field, ValidationError  # type: ignore
+from pydantic import BaseModel, Field, ValidationError
 from datetime import datetime
 
 
@@ -42,7 +42,7 @@ def main() -> None:
                                  crew_size=6,
                                  power_level=85.5,
                                  oxygen_level=92.3,
-                                 last_maintenance="2024-07-09T10:00:00")
+                                 last_maintenance=datetime(2024, 7, 9))
     print_station(space_station)
 
     print()
@@ -53,7 +53,7 @@ def main() -> None:
                                      crew_size=50,
                                      power_level=85.5,
                                      oxygen_level=92.3,
-                                     last_maintenance="2024-07-09T10:00:00")
+                                     last_maintenance=datetime(2024, 7, 9))
 
         print("Valid station created:")
         print_station(space_station)

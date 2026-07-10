@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from pydantic import (BaseModel,  # type: ignore
+from pydantic import (BaseModel,
                       Field,
                       ValidationError,
                       model_validator)
@@ -65,7 +65,7 @@ def main() -> None:
 
     contact_valido = AlienContact(
         contact_id="AC_2024_001",
-        timestamp="2024-10-25T22:00:00",
+        timestamp=datetime(2024, 7, 9),
         location="Area 51, Nevada",
         contact_type=ContactType.RADIO,
         signal_strength=8.5,
@@ -83,7 +83,7 @@ def main() -> None:
     try:
         contact_invalido = AlienContact(
             contact_id="AC_2024_002",
-            timestamp="2024-10-25T23:30:00",
+            timestamp=datetime(2024, 7, 9),
             location="Roswell, New Mexico",
             contact_type=ContactType.TELEPATHIC,
             signal_strength=4.5,

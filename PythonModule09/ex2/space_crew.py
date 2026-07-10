@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-from pydantic import (BaseModel,  # type: ignore
+from pydantic import (BaseModel,
                       Field,
                       ValidationError,
                       model_validator)
@@ -102,7 +102,7 @@ def main() -> None:
         mission_id="M2024_MARS",
         mission_name="Mars Colony Establishment",
         destination="Mars",
-        launch_date="2025-05-20T08:00:00",
+        launch_date=datetime(2024, 7, 9),
         duration_days=900,
         crew=[sarah, john, alice],
         budget_millions=2500.0
@@ -125,7 +125,7 @@ def main() -> None:
             mission_id="M2024_FAIL",
             mission_name="Asteroid Mining",
             destination="Asteroid Belt",
-            launch_date="2026-01-15T12:00:00",
+            launch_date=datetime(2024, 7, 9),
             duration_days=100,
             crew=[john, alice, bob],
             budget_millions=500.0
