@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import data_generator as data_generator
+import data_generator
 
 
 def artifact_sorter(artifacts: list[dict]) -> list[dict]:
